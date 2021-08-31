@@ -697,6 +697,7 @@ dependencies = [
  "actix-web",
  "anyhow",
  "log",
+ "once_cell",
  "pretty_env_logger",
  "serde",
  "serde_json",
