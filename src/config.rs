@@ -10,11 +10,17 @@ pub static CONFIG: Lazy<Config> = Lazy::new(Config::init);
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
     pub actix: ActixConfig,
+    pub storage: StorageConfig,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ActixConfig {
     pub bind: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct StorageConfig {
+    pub screenshots: String,
 }
 
 impl Config {
