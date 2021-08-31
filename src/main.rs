@@ -11,7 +11,11 @@ async fn main() -> Result<()> {
     HttpServer::new(|| {
         App::new()
             .wrap(Logger::default())
-            .service(web::scope("/api").service(report).service(stats))
+            .service(web::scope("/api")
+                .service(report)
+                .service(stats)
+                .service(screenshot)
+            )
     })
     .bind(&CONFIG.actix.bind)?
     .run()
