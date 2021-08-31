@@ -32,7 +32,7 @@ impl Config {
 impl Default for ActixConfig {
     fn default() -> Self {
         Self {
-            bind: "127.0.0.1:8080".to_string()
+            bind: "127.0.0.1:8080".to_string(),
         }
     }
 }

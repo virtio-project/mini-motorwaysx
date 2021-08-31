@@ -1,6 +1,5 @@
 use crate::models::*;
 use actix_web::{post, web, HttpResponse};
-use actix_multipart::{Multipart, Field, MultipartError};
 
 #[post("/report")]
 pub async fn report(report: web::Json<Report>) -> HttpResponse {
@@ -21,6 +20,12 @@ pub async fn screenshot(
     screenshot_name: web::Header<ScreenshotName>,
     data: web::Bytes,
 ) -> HttpResponse {
-    info!("{}#{}: {} ({} bytes)", steam_name, steam_id, screenshot_name, data.len());
+    info!(
+        "{}#{}: {} ({} bytes)",
+        steam_name,
+        steam_id,
+        screenshot_name,
+        data.len()
+    );
     HttpResponse::NoContent().finish()
 }
