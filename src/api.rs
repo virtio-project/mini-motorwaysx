@@ -1,10 +1,10 @@
+use crate::config::CONFIG;
 use crate::models::*;
 use actix_web::{post, web, HttpResponse};
-use tokio::fs;
 use std::path::PathBuf;
 use std::str::FromStr;
-use crate::config::CONFIG;
 use std::time::{SystemTime, UNIX_EPOCH};
+use tokio::fs;
 
 #[post("/report")]
 pub async fn report(report: web::Json<Report>) -> HttpResponse {
